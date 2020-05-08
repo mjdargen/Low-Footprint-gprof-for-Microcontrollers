@@ -1,0 +1,284 @@
+Flat profile:
+
+Each sample counts as 0.2 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  us/call  us/call  name    
+ 57.93     35.80    35.80                             _mcount_internal
+ 34.95     57.40    21.60                             vPortYieldFromISR
+  2.27     58.80     1.40                             Refill_Sound_Task
+  1.62     59.80     1.00   689448     1.45     1.45  LCD_Write_Rectangle_Pixel
+  0.97     60.40     0.60     6948    86.36   230.28  LCD_Text_PrintChar
+  0.97     61.00     0.60                             Sound_Generate_Next_Sample
+  0.65     61.40     0.40                             GI2C1_ReadAddress
+  0.65     61.80     0.40                             __gnu_mcount_nc
+  0.00     61.80     0.00     6948     0.00     0.00  LCD_Start_Rectangle
+  0.00     61.80     0.00      807     0.00     0.00  CLS1_GetStdio
+  0.00     61.80     0.00      540     0.00     0.00  LCD_Text_PrintStr_RC
+  0.00     61.80     0.00      539     0.00     0.00  CLS1_KeyPressed
+  0.00     61.80     0.00      270     0.00     0.00  MMA1_GetX
+  0.00     61.80     0.00      270     0.00     0.00  MMA1_GetY
+  0.00     61.80     0.00      270     0.00     0.00  MMA1_GetZ
+  0.00     61.80     0.00      270     0.00     0.00  convert_xyz_to_roll_pitch
+  0.00     61.80     0.00      270     0.00     0.00  read_full_xyz
+  0.00     61.80     0.00      269     0.00     0.00  UTIL1_ScanDecimal8uNumber
+  0.00     61.80     0.00       58     0.00     0.00  BitIoLdd1_ClrVal
+  0.00     61.80     0.00       58     0.00     0.00  BitIoLdd2_ClrVal
+  0.00     61.80     0.00       58     0.00     0.00  BitIoLdd3_SetVal
+  0.00     61.80     0.00       57     0.00     0.00  BitIoLdd1_SetVal
+  0.00     61.80     0.00       57     0.00     0.00  BitIoLdd2_SetVal
+  0.00     61.80     0.00       57     0.00     0.00  BitIoLdd3_ClrVal
+  0.00     61.80     0.00        2     0.00     0.00  AD1_MeasureChan
+  0.00     61.80     0.00        2     0.00     0.00  AdcLdd1_CreateSampleGroup
+  0.00     61.80     0.00        2     0.00     0.00  AdcLdd1_GetMeasuredValues
+  0.00     61.80     0.00        2     0.00     0.00  AdcLdd1_GetMeasurementCompleteStatus
+  0.00     61.80     0.00        2     0.00     0.00  AdcLdd1_StartSingleMeasurement
+  0.00     61.80     0.00        1     0.00     0.00  AudioAmp_SetVal
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 0.32% of 61.80 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     57.9   35.80    0.00                 _mcount_internal [1]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]     35.0   21.60    0.00                 vPortYieldFromISR [2]
+-----------------------------------------------
+                0.23    0.38    2633/6948        CmdParserTable [7]
+                0.37    0.62    4315/6948        DacLdd1_DMA0_ChInit [6]
+[3]      2.6    0.60    1.00    6948         LCD_Text_PrintChar [3]
+                1.00    0.00  689448/689448      LCD_Write_Rectangle_Pixel [5]
+-----------------------------------------------
+                                                 <spontaneous>
+[4]      2.3    1.40    0.00                 Refill_Sound_Task [4]
+-----------------------------------------------
+                1.00    0.00  689448/689448      LCD_Text_PrintChar [3]
+[5]      1.6    1.00    0.00  689448         LCD_Write_Rectangle_Pixel [5]
+-----------------------------------------------
+                                                 <spontaneous>
+[6]      1.6    0.00    0.99                 DacLdd1_DMA0_ChInit [6]
+                0.37    0.62    4315/6948        LCD_Text_PrintChar [3]
+                0.00    0.00     164/270         convert_xyz_to_roll_pitch [18]
+-----------------------------------------------
+                                                 <spontaneous>
+[7]      1.0    0.00    0.61                 CmdParserTable [7]
+                0.23    0.38    2633/6948        LCD_Text_PrintChar [3]
+                0.00    0.00    6948/6948        LCD_Start_Rectangle [11]
+                0.00    0.00     106/270         convert_xyz_to_roll_pitch [18]
+-----------------------------------------------
+                                                 <spontaneous>
+[8]      1.0    0.60    0.00                 Sound_Generate_Next_Sample [8]
+-----------------------------------------------
+                                                 <spontaneous>
+[9]      0.6    0.40    0.00                 GI2C1_ReadAddress [9]
+-----------------------------------------------
+                                                 <spontaneous>
+[10]     0.6    0.40    0.00                 __gnu_mcount_nc [10]
+-----------------------------------------------
+                0.00    0.00    6948/6948        CmdParserTable [7]
+[11]     0.0    0.00    0.00    6948         LCD_Start_Rectangle [11]
+-----------------------------------------------
+                0.00    0.00     269/807         FatFS_SD_Task [156]
+                0.00    0.00     538/807         Cmd_Line_Task [80]
+[12]     0.0    0.00    0.00     807         CLS1_GetStdio [12]
+-----------------------------------------------
+                0.00    0.00     540/540         Read_Accel_Task [198]
+[13]     0.0    0.00    0.00     540         LCD_Text_PrintStr_RC [13]
+-----------------------------------------------
+                0.00    0.00     539/539         CLS1_ReadAndParseWithCommandTable [68]
+[14]     0.0    0.00    0.00     539         CLS1_KeyPressed [14]
+-----------------------------------------------
+                0.00    0.00     270/270         read_full_xyz [19]
+[15]     0.0    0.00    0.00     270         MMA1_GetX [15]
+-----------------------------------------------
+                0.00    0.00     270/270         read_full_xyz [19]
+[16]     0.0    0.00    0.00     270         MMA1_GetY [16]
+-----------------------------------------------
+                0.00    0.00     270/270         read_full_xyz [19]
+[17]     0.0    0.00    0.00     270         MMA1_GetZ [17]
+-----------------------------------------------
+                0.00    0.00     106/270         CmdParserTable [7]
+                0.00    0.00     164/270         DacLdd1_DMA0_ChInit [6]
+[18]     0.0    0.00    0.00     270         convert_xyz_to_roll_pitch [18]
+-----------------------------------------------
+                0.00    0.00     270/270         Read_Accel_Task [198]
+[19]     0.0    0.00    0.00     270         read_full_xyz [19]
+                0.00    0.00     270/270         MMA1_GetX [15]
+                0.00    0.00     270/270         MMA1_GetY [16]
+                0.00    0.00     270/270         MMA1_GetZ [17]
+-----------------------------------------------
+                0.00    0.00     269/269         FAT1_CheckCardPresence [144]
+[20]     0.0    0.00    0.00     269         UTIL1_ScanDecimal8uNumber [20]
+-----------------------------------------------
+                0.00    0.00      58/58          RGB_Task [197]
+[21]     0.0    0.00    0.00      58         BitIoLdd1_ClrVal [21]
+-----------------------------------------------
+                0.00    0.00      58/58          RGB_Task [197]
+[22]     0.0    0.00    0.00      58         BitIoLdd2_ClrVal [22]
+-----------------------------------------------
+                0.00    0.00      58/58          RGB_Task [197]
+[23]     0.0    0.00    0.00      58         BitIoLdd3_SetVal [23]
+-----------------------------------------------
+                0.00    0.00      57/57          RGB_Task [197]
+[24]     0.0    0.00    0.00      57         BitIoLdd1_SetVal [24]
+-----------------------------------------------
+                0.00    0.00      57/57          RGB_Task [197]
+[25]     0.0    0.00    0.00      57         BitIoLdd2_SetVal [25]
+-----------------------------------------------
+                0.00    0.00      57/57          RGB_Task [197]
+[26]     0.0    0.00    0.00      57         BitIoLdd3_ClrVal [26]
+-----------------------------------------------
+                0.00    0.00       2/2           LCD_TS_Read [179]
+[27]     0.0    0.00    0.00       2         AD1_MeasureChan [27]
+-----------------------------------------------
+                0.00    0.00       2/2           Cpu_ivINT_UART2 [121]
+[28]     0.0    0.00    0.00       2         AdcLdd1_CreateSampleGroup [28]
+-----------------------------------------------
+                0.00    0.00       2/2           Cpu_ivINT_UART2 [121]
+[29]     0.0    0.00    0.00       2         AdcLdd1_GetMeasuredValues [29]
+-----------------------------------------------
+                0.00    0.00       2/2           Cpu_ivINT_UART2 [121]
+[30]     0.0    0.00    0.00       2         AdcLdd1_GetMeasurementCompleteStatus [30]
+-----------------------------------------------
+                0.00    0.00       2/2           Cpu_ivINT_UART2 [121]
+[31]     0.0    0.00    0.00       2         AdcLdd1_StartSingleMeasurement [31]
+-----------------------------------------------
+                0.00    0.00       1/1           Sound_Enable_Amp [216]
+[32]     0.0    0.00    0.00       1         AudioAmp_SetVal [32]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [27] AD1_MeasureChan        [26] BitIoLdd3_ClrVal       [16] MMA1_GetY
+  [28] AdcLdd1_CreateSampleGroup [23] BitIoLdd3_SetVal    [17] MMA1_GetZ
+  [29] AdcLdd1_GetMeasuredValues [12] CLS1_GetStdio        [4] Refill_Sound_Task (mytasks.c)
+  [30] AdcLdd1_GetMeasurementCompleteStatus [14] CLS1_KeyPressed [8] Sound_Generate_Next_Sample
+  [31] AdcLdd1_StartSingleMeasurement [9] GI2C1_ReadAddress [20] UTIL1_ScanDecimal8uNumber
+  [32] AudioAmp_SetVal        [11] LCD_Start_Rectangle    [10] __gnu_mcount_nc
+  [21] BitIoLdd1_ClrVal        [3] LCD_Text_PrintChar      [1] _mcount_internal
+  [24] BitIoLdd1_SetVal       [13] LCD_Text_PrintStr_RC   [18] convert_xyz_to_roll_pitch
+  [22] BitIoLdd2_ClrVal        [5] LCD_Write_Rectangle_Pixel [19] read_full_xyz
+  [25] BitIoLdd2_SetVal       [15] MMA1_GetX               [2] vPortYieldFromISR

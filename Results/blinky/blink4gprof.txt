@@ -1,0 +1,214 @@
+Flat profile:
+
+Each sample counts as 0.001 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 36.55     43.94    43.94                             WAIT1_Wait10Cycles
+ 20.11     68.11    24.17                             loop
+ 16.17     87.54    19.43                             WAIT1_Wait100Cycles
+ 14.01    104.39    16.85    91876     0.18     0.18  WAIT1_WaitCycles
+ 11.77    118.54    14.15                             _mcount_internal
+  1.40    120.21     1.68                             MCUC1_Init
+  0.00    120.21     0.00    91876     0.00     0.18  WAIT1_WaitLongCycles
+  0.00    120.21     0.00      184     0.00    91.55  WAIT1_Waitms
+  0.00    120.21     0.00      184     0.00     0.00  control_LEDs
+  0.00    120.21     0.00       92     0.00     0.00  BitIoLdd2_ClrVal
+  0.00    120.21     0.00       92     0.00     0.00  BitIoLdd2_SetVal
+  0.00    120.21     0.00       92     0.00     0.00  BitIoLdd3_ClrVal
+  0.00    120.21     0.00       92     0.00     0.00  BitIoLdd3_SetVal
+  0.00    120.21     0.00       92     0.00     0.00  BitIoLdd4_ClrVal
+  0.00    120.21     0.00       92     0.00     0.00  BitIoLdd4_SetVal
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 0.00% of 120.21 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     36.5   43.94    0.00                 WAIT1_Wait10Cycles [1]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]     20.1   24.17    0.00                 loop [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[3]     16.2   19.43    0.00                 WAIT1_Wait100Cycles [3]
+-----------------------------------------------
+               16.85    0.00   91876/91876       WAIT1_WaitLongCycles [5]
+[4]     14.0   16.85    0.00   91876         WAIT1_WaitCycles [4]
+-----------------------------------------------
+                0.00   16.85   91876/91876       WAIT1_Waitms [6]
+[5]     14.0    0.00   16.85   91876         WAIT1_WaitLongCycles [5]
+               16.85    0.00   91876/91876       WAIT1_WaitCycles [4]
+-----------------------------------------------
+                0.00   16.85     184/184         main [7]
+[6]     14.0    0.00   16.85     184         WAIT1_Waitms [6]
+                0.00   16.85   91876/91876       WAIT1_WaitLongCycles [5]
+-----------------------------------------------
+                                                 <spontaneous>
+[7]     14.0    0.00   16.85                 main [7]
+                0.00   16.85     184/184         WAIT1_Waitms [6]
+                0.00    0.00     184/184         control_LEDs [10]
+-----------------------------------------------
+                                                 <spontaneous>
+[8]     11.8   14.15    0.00                 _mcount_internal [8]
+-----------------------------------------------
+                                                 <spontaneous>
+[9]      1.4    1.68    0.00                 MCUC1_Init [9]
+-----------------------------------------------
+                0.00    0.00     184/184         main [7]
+[10]     0.0    0.00    0.00     184         control_LEDs [10]
+                0.00    0.00      92/92          BitIoLdd4_ClrVal [15]
+                0.00    0.00      92/92          BitIoLdd4_SetVal [16]
+                0.00    0.00      92/92          BitIoLdd2_ClrVal [11]
+                0.00    0.00      92/92          BitIoLdd2_SetVal [12]
+                0.00    0.00      92/92          BitIoLdd3_ClrVal [13]
+                0.00    0.00      92/92          BitIoLdd3_SetVal [14]
+-----------------------------------------------
+                0.00    0.00      92/92          control_LEDs [10]
+[11]     0.0    0.00    0.00      92         BitIoLdd2_ClrVal [11]
+-----------------------------------------------
+                0.00    0.00      92/92          control_LEDs [10]
+[12]     0.0    0.00    0.00      92         BitIoLdd2_SetVal [12]
+-----------------------------------------------
+                0.00    0.00      92/92          control_LEDs [10]
+[13]     0.0    0.00    0.00      92         BitIoLdd3_ClrVal [13]
+-----------------------------------------------
+                0.00    0.00      92/92          control_LEDs [10]
+[14]     0.0    0.00    0.00      92         BitIoLdd3_SetVal [14]
+-----------------------------------------------
+                0.00    0.00      92/92          control_LEDs [10]
+[15]     0.0    0.00    0.00      92         BitIoLdd4_ClrVal [15]
+-----------------------------------------------
+                0.00    0.00      92/92          control_LEDs [10]
+[16]     0.0    0.00    0.00      92         BitIoLdd4_SetVal [16]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [11] BitIoLdd2_ClrVal       [16] BitIoLdd4_SetVal        [5] WAIT1_WaitLongCycles
+  [12] BitIoLdd2_SetVal        [9] MCUC1_Init              [6] WAIT1_Waitms
+  [13] BitIoLdd3_ClrVal        [3] WAIT1_Wait100Cycles     [8] _mcount_internal
+  [14] BitIoLdd3_SetVal        [1] WAIT1_Wait10Cycles     [10] control_LEDs
+  [15] BitIoLdd4_ClrVal        [4] WAIT1_WaitCycles        [2] loop (WAIT1.c)
