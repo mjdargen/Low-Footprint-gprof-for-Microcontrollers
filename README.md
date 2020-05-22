@@ -16,19 +16,21 @@ Profiling is the key to unlocking critical optimizations for microcontrollers bu
 \
 This thesis attempts to shift that paradigm. The proposed framework tears down those silos of information by delivering a solution that works for all microcontrollers and advances the on-going efforts to produce an open-source, processor-agnostic development toolchain. To adapt gprof for a microcontroller environment, this thesis proposes the novel idea of dividing the profiling responsibilities between the target microcontroller and the host personal computer. By divvying up the profiling responsibilities, it minimizes the overhead on the microcontroller and allows the program to execute unencumbered. The result is a profiler with identical functionality that generates the same, expressive profiles as the original implementation. The profiler surpasses existing solutions by limiting the demand on the microcontroller’s constrained resources. This profiler is ripe for adoption and continued growth due to its elegant approach and its embrace of the burgeoning, open-source development effort within the embedded systems community.  
 
-
+NCSU Libraries Link to thesis: http://www.lib.ncsu.edu/resolver/1840.20/37531  
 
 ## Directory Overview  
 ```
 |-- home
     |-- Host PC Application     -   Host PC Application Source Code
-    |   |-- Validation              -   Python Script Validation for Host PC Application
+    |   |-- Validation          -   Python Script Validation for Host PC Application
     |-- KL25Z gprof Blinky      -   Blinky Demo Program for Target Microcontroller
     |-- KL25Z gprof Shield      -   Shield Demo Program for Target Microcontroller
     |-- Results                 -   gprof Outputs for Validation Runs
-    |   |-- blinky                  -   Results for Blinky Program
-    |   |-- shield                  -   Results for Shield Program
+    |   |-- blinky              -   Results for Blinky Program
+    |   |-- shield              -   Results for Shield Program
     |-- Target MCU Application  -   Target Microcontroller Profiling Source Code
+    |-- defense.pdf             -   Copy of slides from thesis defense
+    |-- thesis.pdf              -   Copy of thesis
 ```
 
 ## File Structure  
